@@ -12,7 +12,7 @@ output "wafv2_web_acls_arn" {
 }
 output "wafv2_web_acls_association_config" {
   description = "Map of association_config values across all wafv2_web_acls, keyed the same as var.wafv2_web_acls"
-  value       = { for k, v in aws_wafv2_web_acl.wafv2_web_acls : k => v.association_config if v.association_config != null && length(v.association_config) > 0 }
+  value       = { for k, v in aws_wafv2_web_acl.wafv2_web_acls : k => one(v.association_config) if v.association_config != null && length(v.association_config) > 0 }
 }
 output "wafv2_web_acls_capacity" {
   description = "Map of capacity values across all wafv2_web_acls, keyed the same as var.wafv2_web_acls"
@@ -20,11 +20,11 @@ output "wafv2_web_acls_capacity" {
 }
 output "wafv2_web_acls_captcha_config" {
   description = "Map of captcha_config values across all wafv2_web_acls, keyed the same as var.wafv2_web_acls"
-  value       = { for k, v in aws_wafv2_web_acl.wafv2_web_acls : k => v.captcha_config if v.captcha_config != null && length(v.captcha_config) > 0 }
+  value       = { for k, v in aws_wafv2_web_acl.wafv2_web_acls : k => one(v.captcha_config) if v.captcha_config != null && length(v.captcha_config) > 0 }
 }
 output "wafv2_web_acls_challenge_config" {
   description = "Map of challenge_config values across all wafv2_web_acls, keyed the same as var.wafv2_web_acls"
-  value       = { for k, v in aws_wafv2_web_acl.wafv2_web_acls : k => v.challenge_config if v.challenge_config != null && length(v.challenge_config) > 0 }
+  value       = { for k, v in aws_wafv2_web_acl.wafv2_web_acls : k => one(v.challenge_config) if v.challenge_config != null && length(v.challenge_config) > 0 }
 }
 output "wafv2_web_acls_custom_response_body" {
   description = "Map of custom_response_body values across all wafv2_web_acls, keyed the same as var.wafv2_web_acls"
@@ -32,11 +32,11 @@ output "wafv2_web_acls_custom_response_body" {
 }
 output "wafv2_web_acls_data_protection_config" {
   description = "Map of data_protection_config values across all wafv2_web_acls, keyed the same as var.wafv2_web_acls"
-  value       = { for k, v in aws_wafv2_web_acl.wafv2_web_acls : k => v.data_protection_config if v.data_protection_config != null && length(v.data_protection_config) > 0 }
+  value       = { for k, v in aws_wafv2_web_acl.wafv2_web_acls : k => one(v.data_protection_config) if v.data_protection_config != null && length(v.data_protection_config) > 0 }
 }
 output "wafv2_web_acls_default_action" {
   description = "Map of default_action values across all wafv2_web_acls, keyed the same as var.wafv2_web_acls"
-  value       = { for k, v in aws_wafv2_web_acl.wafv2_web_acls : k => v.default_action if v.default_action != null && length(v.default_action) > 0 }
+  value       = { for k, v in aws_wafv2_web_acl.wafv2_web_acls : k => one(v.default_action) if v.default_action != null && length(v.default_action) > 0 }
 }
 output "wafv2_web_acls_description" {
   description = "Map of description values across all wafv2_web_acls, keyed the same as var.wafv2_web_acls"
@@ -84,6 +84,6 @@ output "wafv2_web_acls_token_domains" {
 }
 output "wafv2_web_acls_visibility_config" {
   description = "Map of visibility_config values across all wafv2_web_acls, keyed the same as var.wafv2_web_acls"
-  value       = { for k, v in aws_wafv2_web_acl.wafv2_web_acls : k => v.visibility_config if v.visibility_config != null && length(v.visibility_config) > 0 }
+  value       = { for k, v in aws_wafv2_web_acl.wafv2_web_acls : k => one(v.visibility_config) if v.visibility_config != null && length(v.visibility_config) > 0 }
 }
 
